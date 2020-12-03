@@ -1,4 +1,4 @@
-from distutils.core import setup, Extension
+from setuptools import setup, Extension
 
 #  https://stackoverflow.com/questions/4529555/building-a-ctypes-based-c-library-with-distutils
 from distutils.command.build_ext import build_ext as build_ext_orig
@@ -30,7 +30,7 @@ module = CTypesExtension('multipletau_cor_tttr/CCF',
 
 setup(
     name='multipletau_cor_tttr',
-    version='0.1.3',
+    version='0.1.4',
     author='Anders Barth',
     license='MIT',
     author_email='anders.barth@gmail.com',
@@ -43,8 +43,9 @@ setup(
     long_description=open('README').read(),
     ext_modules=[module],
     install_requires=['numpy', 'matplotlib'],
-    classifiers=['Programming Language :: Python :: 2.7',
-                 'Programming Language :: Python :: 3.5'],
+    classifiers=['Programming Language :: Python :: 3',
+                 'License :: OSI Approved :: MIT License',
+                 'Operating System :: OS Independent'],
     cmdclass={'build_ext': build_ext},
     keywords=['FCS Fluorescence Correlation Spectroscopy Single Photon '
               'Counting TTTR Multiple-tau algorithm']
