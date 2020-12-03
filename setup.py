@@ -2,7 +2,10 @@ from distutils.core import setup, Extension
 
 #  https://stackoverflow.com/questions/4529555/building-a-ctypes-based-c-library-with-distutils
 from distutils.command.build_ext import build_ext as build_ext_orig
-class CTypesExtension(Extension): pass
+
+
+class CTypesExtension(Extension):
+    pass
 
 
 class build_ext(build_ext_orig):
@@ -34,13 +37,15 @@ setup(
     packages=['multipletau_cor_tttr'],
     package_data={'multipletau_cor_tttr': ['sample_data.npy']},
     url='http://testpypi.python.org/pypi/multipletau_cor_tttr/',
-    description='Library for correlation of time-tagged time-resolved photon data for'
-                ' fluorescence correlation spectroscopy (FCS) analysis.',
+    description='Library for correlation of time-tagged time-resolved photon '
+                'data for fluorescence correlation spectroscopy (FCS) '
+                'analysis.',
     long_description=open('README').read(),
     ext_modules=[module],
     install_requires=['numpy', 'matplotlib'],
     classifiers=['Programming Language :: Python :: 2.7',
                  'Programming Language :: Python :: 3.5'],
     cmdclass={'build_ext': build_ext},
-    keywords=['FCS Fluorescence Correlation Spectroscopy Single Photon Counting TTTR Multiple-tau algorithm']
+    keywords=['FCS Fluorescence Correlation Spectroscopy Single Photon '
+              'Counting TTTR Multiple-tau algorithm']
 )
