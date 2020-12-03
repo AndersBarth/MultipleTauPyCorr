@@ -4,6 +4,7 @@ from distutils.core import setup, Extension
 from distutils.command.build_ext import build_ext as build_ext_orig
 class CTypesExtension(Extension): pass
 
+
 class build_ext(build_ext_orig):
 
     def build_extension(self, ext):
